@@ -1,0 +1,22 @@
+{
+  "title": "Gravity Rainbow Formulation (GRF 2026 Essay)",
+  "description": "LaTeX source and build workflow for the GRF 2026 essay, including English and Spanish versions.",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "creators": [
+    {
+      "name": "Mazuela, Guillermo Rodrigo"
+    }
+  ],
+  "keywords": [
+    "gravity",
+    "dark matter",
+    "gravitational lensing",
+    "LaTeX",
+    "GRF 2026"
+  ],
+  "language": "eng",
+  "license": "cc-by-4.0",
+  "doi": "10.5281/zenodo.18770548",
+  "notes": "Version intended for archival deposition in Zenodo."
+}
