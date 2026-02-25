@@ -1,1 +1,382 @@
+% GRF 2026 Essay v17.3.221 - Compact LaTeX Version in English
+% Gravity Research Foundation 2026 Awards
+% Author: Guillermo Rodrigo Mazuela
 
+\documentclass[12pt,letterpaper]{article}
+
+% GRF requirements: 1-inch margins, double spacing
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\doublespacing
+
+% Fonts and encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{times}
+
+% Mathematics
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{xcolor}
+\graphicspath{{./TEX/}{./}{../}}
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref}
+
+% Cover spacing tools
+\usepackage{microtype}
+\usepackage{soul}
+\usepackage{calligra}
+\usepackage{xstring}
+\usepackage{fourier-orns}
+
+\newcommand{\monthyearen}{%
+  \ifcase\month\or
+  January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or December%
+  \fi, \number\year}
+\ExplSyntaxOn
+\cs_new:Npn \compversion {
+  \tl_set:Nx \l_tmpa_tl { \c_sys_jobname_str }
+  \regex_replace_once:nnN { .*_v([0-9]+\.[0-9]+\.[0-9]+)_.* } { v\1 } \l_tmpa_tl
+  \tl_use:N \l_tmpa_tl
+}
+\ExplSyntaxOff
+
+% Headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+\singlespacing
+\begin{center}
+
+\vspace*{-1.45cm}
+
+\vspace{-0.30cm}
+
+% eCEL pattern under the G
+\newcommand{\starsep}{0.11em}
+\newcommand{\sbe}[1]{{\color{#1}\starredbullet}}
+\large
+\begin{center}
+\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!88}\kern\starsep\sbe{black!88}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!88}\kern\starsep\sbe{black!88}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!60}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!35}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!20}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!10}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!5}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}\\[-9pt]
+\sbe{black!1}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!2}\kern\starsep\sbe{black!1}
+\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}\kern\starsep\sbe{black!1}
+\end{center}
+\normalsize
+
+\vspace{-0.06cm}
+
+{\LARGE GRF - 2026}
+
+\vspace{0.12cm}
+\vspace{0.18cm}
+
+{\fontsize{28}{40}\selectfont
+\textls[120]{{\fontsize{40}{46}\selectfont G}RAVITY\ {\fontsize{40}{46}\selectfont R}AINBOW}}\\[0.45em]
+{\fontsize{28}{40}\selectfont
+\textls[120]{{\fontsize{40}{46}\selectfont F}ORMULATION}}
+
+\vspace{0.18cm}
+
+{\color{black!85}\rule{0.21\textwidth}{0.18pt}}\\[-3.8pt]
+{\color{black!85}\rule{0.40\textwidth}{0.36pt}}\\[-3.8pt]
+{\color{black!85}\rule{0.80\textwidth}{0.70pt}}\\[-3.8pt]
+
+\rule{1.0\textwidth}{1.3pt}\\[0pt]
+\begin{minipage}{0.95\textwidth}
+{\scriptsize ThöEv-RğB v4.2.6 build \compversion}\hfill{\scriptsize \monthyearen}
+\end{minipage}\\[-5pt]
+\rule{1.0\textwidth}{1.3pt}
+
+\vspace{0.28cm}
+
+{\Large\calligra Returning the Apple of}\\ [6pt]
+{\huge\calligra Isaac Newton to Georges-Louis Le Sage}
+
+\vspace{0.04cm}
+
+{\Large G. r. Mazuela} {\normalsize (-GM/$r^z$)}
+
+\vspace{0.05cm}
+
+{\small
+\texttt{MazDarkMatter@gmail.com}\\
+Santiago, Chile}
+
+\vspace{0.0cm}
+
+\includegraphics[width=0.3\textwidth]{IMG/GRF2026_v4.2.6.1.png}
+
+\end{center}
+
+\vspace{-1.9em}
+
+\begin{center}
+\begin{minipage}{0.8\textwidth}
+{\scriptsize\noindent \qquad What bends when spacetime bends? Einstein described geometry but did not identify the physical substrate. We propose that observed dark matter is that substrate: a continuous yet atomically porous fluid (eCEL) that generates gravitational push through pressure gradients. This medium recovers the push intuition of Fatio-Le Sage (1690--1784) while resolving Poincare's thermodynamic objection by replacing discrete particles with a continuous fluid. From this structure six observable effects emerge: Archimedean accumulation, pressure push, transparency, chromatic refraction, dynamic separability, and process compression. Testable prediction: the local refractive index $n(\lambda,\rho)$ induces wavelength-dependent gravitational deflection. Recent spectrophotometric data from gravitationally lensed systems suggest systematic chromatic variations consistent with refraction in a variable-density medium.\par}
+\end{minipage}
+\end{center}
+
+\vspace{0.0em}
+
+\begin{center}
+{\tiny\textit{Essay written for the Gravity Research Foundation 2026 Awards for Essays on Gravitation.}}\\[-3pt]
+{\small\textsc{mmxxvi}}
+\end{center}
+
+\newpage
+\setcounter{page}{1}
+\doublespacing
+
+\section{Historical Context}
+
+\textbf{Newton (1687)}: Gravity as pull, a force at a distance. The mathematics worked; the mechanism remained unknown.
+
+\textbf{Fatio-Le Sage (1690--1784)}: They proposed push from outside through particles.\textsuperscript{1,2,15} Correct intuition; discrete particles produced a fatal thermodynamic objection.
+
+\textbf{Poincare (1908)}: He found the ``thermodynamic worm in the apple.'' Collisions of Le Sage particles with matter would generate catastrophic heating. Massive bodies would heat up until vaporization. Discrete-particle mechanism: physically impossible. For 200 years, gravitational push was dismissed---not due to conceptual failure, but due to incorrect implementation.
+
+\textbf{Einstein (1915)}: He replaced pull with geometry. Geodesics describe paths but do not specify an underlying mechanism (pull vs push). Spacetime curvature is kinematic description, not dynamic explanation.
+
+\textbf{Einstein (1920, Leiden)}: He recognized the need for an ``ether of General Relativity''---not material, but with physical properties determining mechanical events.\textsuperscript{5} We propose identifying that medium: a subtle continuous yet porous fluid under pressure gradient.
+
+\textbf{Sakharov (1967)}: Emergent gravity from quantum vacuum fluctuations.\textsuperscript{8} He derived $G$ from first principles as ``metric elasticity.'' But the substrate remained abstract, with no astronomical connection and no testable predictions. During the Cold War, it was mostly ignored.
+
+\textbf{GRF-2026 (present)}: This framework unifies those lines. It rescues Le Sage push intuition but replaces discrete particles with a compressible continuous fluid. A continuous fluid does not generate collision heating---removing Poincare's thermodynamic worm. It identifies Sakharov's substrate with observed dark matter (eCEL fluid). His ``metric elasticity'' becomes pressure gradient in this medium. It links quantum formalism to astronomical evidence: dark-matter halos, cluster behavior, and large-scale structure. A 360-year puzzle: right intuition (push), wrong implementation (particles), elegant description without mechanism (geometry), quantum emergence without observable substrate (Sakharov), finally unified through continuous dark fluid.
+
+It yields a testable prediction that no prior model offers: chromatic refraction in gravitational lensing. It preserves Einsteinian geometry as correct description while proposing an underlying physical mechanism.
+
+\section{Proposal}
+
+Einstein field equations correctly describe gravitational behavior. We do not reject this mathematics---we propose the physical mechanism sustaining it. Einstein noted that ``we cannot conceive of anything happening physically in empty space.''\textsuperscript{5} We identify that medium: a continuous yet porous fluid under pressure gradient.\textsuperscript{6}
+
+\subsection{Mechanism vs Description}
+
+\textbf{Einstein}: Spacetime curvature describes how objects fall.
+
+\textbf{Ours}: A pressure gradient in a compressible medium causes that curvature.
+
+It is not pull from ahead (abstract geometric attraction). It is push from behind (differential pressure in a physical medium). The geodesic describes the path, blueprint, and architecture. The pressure gradient is the built road matching that blueprint and allowing vehicles to move.
+
+\subsection{Geodesic: Description, Not Mechanism}
+
+A geodesic describes trajectory but not the physical mechanism enabling motion. The same geodesic can be generated by pull or push.
+
+Consider a vehicle in a banked curve: a passenger without a belt tends to move outward---if the car turns left, the body shifts right (tangential inertia: it wants to keep moving straight). The seat belt restrains the passenger. The car keeps the turn because tires grip the ground (friction, wear). The ground exerts a normal force (perpendicular to the banked surface); decomposing this force in Cartesian coordinates yields a horizontal component toward the curve center (reaction to tire lateral force, Newton's third law).
+
+A closer orbital analogy: the \textbf{Wall of Death} (circus sphere where a motorcycle rides on a vertical wall). The bike pushes against the wall. The wall exerts a normal force that keeps the bike up. If speed is too low: the bike falls. If speed is too high: it escapes. Correct speed: stable orbit along the wall.
+
+For fifty years we have measured with increasing precision the geometry of gravitational banking---spacetime curvature, geodesics, tensor metrics---without asking what built that bank or what supports that wall. Einstein described the path with impeccable mathematical elegance. But describing is not explaining. Geometry is consequence, not cause. What physical mechanism generates observed curvature?
+
+Gravitational analogy: Planet = vehicle. Inertia = engine (provides tangential motion). Accumulated dark matter = wall (fixed structure formed by eCEL density gradient). Ordinary/dark matter contact = ``tires'' (physical interface where the planet ``rubs'' against eCEL gradient). This interface generates normal force toward the center (observable gravity, Newton's third law). If speed is too low: the planet falls inward. If speed is too high: the planet escapes (escape velocity). Correct orbital speed: balance between tangential inertia and interface reaction. Pull toward center is the observed effect; pressure-gradient push is the causal mechanism.
+
+The same effect at galactic edges---where dark matter sustains stellar orbits---operates in solar systems. One mechanism: accumulated dark matter forms structure, inertia provides motion.
+
+\subsection{Why a Pressure-Gradient Mechanism}
+
+Gravitational pull exists as an observable and measurable effect. No one disputes the effect. The question is causal mechanism. Einstein modeled the effect geometrically (spacetime curvature). GRF proposes the physical mechanism generating that observed curvature.
+
+With external push: when two massive bodies are near, both mechanically displace eCEL fluid. Between them a density reduction appears. Denser outer fluid pushes toward the lower-density region. Less dense fluid in the gap pushes less. Pressure gradient generates net push. This mechanism persists continuously---not action at a distance, but local pressure differential in a physical medium.
+
+Advantage: the mechanism operates through a continuous field with well-defined local properties (density, pressure, compressibility) instead of requiring instantaneous action through empty space.
+
+\subsection{Volumetric Push}
+
+Push acts throughout volume, atom by atom, not only at the surface. Like a sponge submerged in fluid: pressure acts at each internal point. The fluid penetrates between atoms, pushing each nucleus according to local pressure gradient. This explains mass dependence: a hollow balloon weighs less than a solid ball (same size) because it contains fewer atoms. Total push = sum over individual atoms.
+
+\textbf{Familiar intuition:} A compact neutron star displaces enormous amounts of eCEL fluid. A spoonful has neutrons packed so densely that eCEL fluid cannot penetrate between them---creating a barrier impenetrable to the fluid. Each neutron displaces local fluid. Total push on the spoonful = sum of pushes on $\sim 10^{57}$ individual neutrons. Result: the spoonful weighs like a mountain. Not because it ``pulls more''---but because it displaces more eCEL fluid, generating a pressure gradient proportional to the neutron count.
+
+\subsection{Fluid Properties}
+
+\textbf{Note on apparently ad hoc properties:} The characteristics of this fluid are required to satisfy observational predictions. Although they may seem speculative, there is a fundamental explanation from first principles based on quantum reticular vacuum structure. This full derivation (technical THOEV-RgB document) is beyond this essay's scope but available for review. The author can be contacted for details.\textsuperscript{11} eCEL behavior is analogous to classical fluids described by Navier-Stokes equations,\textsuperscript{18} but subtler because it does not involve ordinary matter, rather vacuum structure.
+
+This compressible medium with extremely low viscosity has reticular structure at atomic scale.\textsuperscript{11} It also shows inherent electromagnetic activity, consistent with Sakharov's link between gravity and quantum vacuum fluctuations.\textsuperscript{8} Unlike colliding particles (which generate heat---Poincare was right), fluid exerting differential pressure does not generate perceptible heat.
+
+Like bubbles in deep ocean: denser bottom water pushes a bubble upward via pressure gradient without heating. Similarly for planets: when two bodies are close, the fluid between them has lower density than outer fluid. This pressure imbalance pushes bodies together.
+
+\textbf{Fundamental property: continuous yet porous}---reticular atomic-scale structure, continuous but with porous architecture enabling selective transmission.
+
+From this, Archimedean behavior emerges: mass displaces fluid, which accumulates at the surface creating a density gradient (higher at surface, decaying as $1/r^2$).\textsuperscript{10}
+
+Six derived observable effects:
+
+\textbf{1. Density gradient}: Fluid accumulates at borders of massive matter according to Archimedes.\textsuperscript{10,19} Observable in dark-matter halos, galactic rotation curves, and gravitational lensing.
+
+\textbf{2. Pressure push}: Nearby bodies experience lower inter-body density. Surrounding fluid pushes harder.\textsuperscript{19} Observable as Newtonian gravitational force, falling bodies, planetary orbits.
+
+\textbf{3. Transparency}: Light crosses network pores.\textsuperscript{12} Space is transparent. Observable.
+
+\textbf{4. Gravitational chromatic refraction}:\textsuperscript{14,16,17} This is a wave-physics effect, not a classical-fluid effect. When light traverses an eCEL density gradient, each wavelength experiences a slightly different refractive index---analogous to an optical prism splitting white light. In standard gravitational lensing, all wavelengths deflect identically (pure General Relativity prediction). In GRF, eCEL density gradient acts as a dispersive medium: blue light (high frequency, short $\lambda$) interacts differently than red light (low frequency, long $\lambda$) with reticular fluid structure. The difference is tiny but measurable in quasar lensing: blue image should appear shifted by \(\sim\) milliarcseconds relative to red image of the same object. Gravitational chromatic aberration. Reported in literature as ``interstellar dust'' or ``instrumental aberrations.''\textsuperscript{16,17} GRF predicts: not dust---intrinsic structure of the gravitational medium. Testable via high-resolution multi-band observations (HST, JWST, future space interferometers). \textbf{Unique prediction}: no previous gravity model (Newton, Einstein, MOND, TeVeS, f(R)) predicts chromatic refraction in pure lensing without invoking intermediate matter. GRF fundamentally requires it.
+
+\textbf{5. Dynamic separability}:\textsuperscript{20} Compressible eCEL fluid can separate locally under violent perturbations. Analogy: water when a diver enters---fluid separates, wraps the object, then rejoins producing surface waves. In gravitational collapse (supernovae, black-hole mergers): matter collapses violently displacing eCEL fluid. \textbf{Gravitational thunder}: as atmospheric lightning violently separates air---when air rejoins, we hear thunder (acoustic wave). Similarly, when eCEL fluid rejoins after violent separation, it generates gravitational waves---the ``eCEL applause'' propagating through the medium (detected by LIGO/Virgo as vacuum-density oscillations). If separation is permanent: region of zero eCEL density. Light cannot propagate through this region---event horizon, black hole. Fluid continuity equation: $\partial\rho/\partial t + \nabla\cdot(\rho\vec{v}) = 0$. Negative source term in collapse: fluid ``leak'' generating permanent deficit. Gravitational waves are perturbations propagating in this elastic-compressible medium, exactly as Sakharov proposed, but now with observable substrate (dark matter) and clear physical identification (ultra-low-viscosity eCEL fluid).
+
+\textbf{6. Process compression}:\textsuperscript{19,21} Dense eCEL fluid acts as a resistive medium over physical processes. Atomic oscillations (clocks), radioactive decays, all frequencies are compressed proportionally in dense gradient. Observable as gravitational time dilation: a clock at Earth's surface runs slower than one in orbit (GPS requires 38 $\mu$s/day correction). Pound-Rebka experiment (1959): photons climbing a tower lose frequency (gravitational redshift). GRF interpretation: it is not ``time'' as a dimension mystically dilating---it is physical processes running slower in denser medium, like sound propagating slower in viscous medium. \textbf{Temporal inertia principle}: physical systems resist changes in temporal rate exactly as masses resist changes in spatial speed (classical inertia). Deep link between spatial inertia (Newton's first law) and temporal inertia (resistance to process compression). eCEL mediates both. Technical detail in Sanders Foundation document.\textsuperscript{21}
+
+\section{The Prediction}
+
+Near massive bodies, density increases. Refractive index increases, creating phase differences.
+
+Einstein field equations:
+\begin{equation}
+G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
+\end{equation}
+
+Sakharov (1967) showed this emerges from quantum fluctuations. The eCEL medium can be phenomenologically associated with dark matter distribution inferred from astrophysical observations. This identification requires additional cosmological-consistency analysis (CMB anisotropies, structure formation, baryon acoustic oscillations).
+
+Observed gravitational acceleration:
+\begin{equation}
+a = \frac{GM}{r^2}
+\end{equation}
+
+results from pressure gradient: $\nabla P \propto \rho\nabla\Phi$.
+
+Density gradient:
+\begin{equation}
+\nabla\rho(\vec{r}) = -\frac{\rho_\infty GM}{r^3}\vec{r}
+\end{equation}
+
+generates acceleration:
+\begin{equation}
+\vec{a} = -\frac{\nabla P}{\rho} = -\frac{GM}{r^2}\hat{r}
+\end{equation}
+
+\textbf{Consistency with General Relativity:} In the weak-field limit and assuming spherical symmetry, eCEL density gradient $\nabla\rho \propto -GM/r^3$ reproduces the Newtonian acceleration field. Under a linear density--refractive-index relation in the dilute limit, this gives an effective refractive index $n(r) \approx 1 + 2GM/(rc^2)$, identical to first-order Schwarzschild optical metric. The resulting light deflection $\theta = 4GM/(bc^2)$ is recovered at leading order. Equivalence with Schwarzschild holds at first post-Newtonian order; strong-field behavior remains to be developed.
+
+In ordinary matter, fluid penetrates. In neutron stars, density excludes fluid. Without medium, light does not transmit---black holes are black: total absence of eCEL.
+
+\textbf{Orbital dynamics:} Velocity emerges from balance:
+\begin{equation}
+v = \sqrt{\frac{GM}{r}}
+\end{equation}
+
+\textbf{Light deflection:} In 1919, Eddington measured: $\theta = 1.75$ arcsec.\textsuperscript{6} Refraction predicts the same.
+
+Local refractive index:
+\begin{equation}
+n(r) \approx 1 + \frac{2GM}{rc^2}
+\end{equation}
+
+Solving: $n = 1.00000424$ (4 parts per million). This explains gravity's weakness.
+
+\textbf{Crucial divergence:} Gravitational deflection:
+\begin{equation}
+\theta = \frac{4GM}{bc^2}
+\end{equation}
+
+In General Relativity: $\theta$ independent of $\lambda$.
+
+In refractive fluid:
+\begin{equation}
+\theta(\lambda) = \frac{4GM}{bc^2} \cdot f(n(\lambda))
+\end{equation}
+
+\textbf{Testable prediction:} If geometric: wavelength independent. If refractive: wavelength dependent. Lensing should produce a rainbow. Blue should deflect more than red.
+
+\section{Observational Evidence}
+
+\textbf{Cosmic scale:} Multiple observations report chromatic effects:
+
+\textbf{Bisnovatyi-Kogan \& Tsupko (2017)}\textsuperscript{14}---Chromatic lensing. Wavelength-dependent deflection inconsistent with pure geometry.
+
+\textbf{SDSS J1001+5027 (2022--2025)}\textsuperscript{17}---Strong chromatic variation. Dramatic change dependent on wavelength.
+
+\textbf{Sajadian \& Hundertmark (2021)}\textsuperscript{16}---Detectable chromatic perturbations. $\Delta C \sim 0.01$--0.06 mag.
+
+\textbf{Nanometric scale:} Casimir effect demonstrates measurable forces.\textsuperscript{9,18} Our proposal assigns physical meaning.
+
+\textbf{Atomic scale:} Van der Waals forces.\textsuperscript{7} Quantum fluctuations\textsuperscript{13} can be interpreted as push effect.
+
+\textbf{Multi-scale unification:} Same mechanism from atomic to cosmic scales.
+
+\section{The Test}
+
+Measure lensing deflection across wavelengths. If geometric: all identical. If refractive: blue more than red.
+
+Current telescopes can resolve this. Data may already exist in archives. We propose systematic analysis of existing multi-band observations.
+
+\section{Note on Approach}
+
+This proposal explores non-conventional territory. We acknowledge the success of General Relativity. This proposal does not intend to replace General Relativity, but to reinterpret its weak-field limit through a physical-medium model that yields additional testable deviations.
+
+Sakharov demonstrated gravitational action emerging from quantum fluctuations. The medium model may offer physical interpretation of this connection.
+
+This essay includes pedagogical analogies. Correct ideas should be communicable without sacrificing rigor. Mathematical complexity is a tool, not a requirement. As Feynman demonstrated.
+
+\textbf{Acknowledgment:} Gravity Research Foundation has kept ``What is gravity?'' open for 77 years. That commitment is deeply valuable. We appreciate this opportunity. For two decades this proposal existed without a forum for evaluation. Institutions that keep space for foundational questions fulfill an essential role.
+
+We hope this contributes to ongoing dialogue, regardless of whether conclusions prove correct. A testable prediction can be confirmed or refuted---precisely what science requires.
+
+Thank you for keeping the question alive.
+
+\newpage
+\begin{thebibliography}{99}
+
+\bibitem{fatio} Fatio de Duillier, N. (1690). \textit{De la Cause de la Pesanteur}. Royal Society Archives.
+
+\bibitem{lesage} Le Sage, G.L. (1784). \textit{Lucr\`ece Newtonien}.
+
+\bibitem{poincare} Poincare, H. (1908). La dynamique de l'electron.
+
+\bibitem{navier} Navier, C.L. (1822). Memoire sur les lois du mouvement des fluides. \textit{Memoires de l'Academie Royale}, 6, 389--440.
+
+\bibitem{einstein} Einstein, A. (1920). \textit{Ether and the Theory of Relativity}. Leiden.
+
+\bibitem{eddington} Eddington, A.S. (1919). Deflection of Light by the Sun's Field.
+
+\bibitem{london} London, F. (1930). Zur Theorie der Molekularkrafte. \textit{Z. Physik} 63, 245--279.
+
+\bibitem{sakharov} Sakharov, A.D. (1967). Quantum fluctuations in curved space. \textit{Doklady} 177, 70--71.
+
+\bibitem{casimir} Casimir, H.B.G. (1948). Attraction between conducting plates. \textit{Proc. Koninklijke Akad.} 51, 793--795.
+
+\bibitem{archimedes} Archimedes (c. 250 BC). \textit{On Floating Bodies}.
+
+\bibitem{whitham} Whitham, G.B. (1974). \textit{Linear and Nonlinear Waves}. Wiley.
+
+\bibitem{michelson} Michelson, A.A., Morley, E.W. (1887). Relative motion of Earth and ether. \textit{Am. J. Sci.} 34, 333--345.
+
+\bibitem{colella} Colella, R., et al. (1975). Gravity-induced quantum interference. \textit{PRL} 34, 1472--1474.
+
+\bibitem{bisnovatyi} Bisnovatyi-Kogan, G.S., Tsupko, O.Y. (2017). Chromatic gravitational lensing. \textit{Universe} 3(3), 57.
+
+\bibitem{edwards} Edwards, M. (2002). \textit{Pushing Gravity}. Apeiron.
+
+\bibitem{sajadian} Sajadian, S., Hundertmark, M. (2021). Stellar color variation in microlensing. \textit{A\&A} 643, A121.
+
+\bibitem{gilmerino} Gil-Merino, R. et al. (2025). SDSS J1001+5027 chromatic variation. \textit{A\&A}.
+
+\bibitem{lamoreaux} Lamoreaux, S.K. (1997). Demonstration of Casimir force. \textit{PRL} 78(5), 5--8.
+
+\bibitem{newton} Newton, I. (1687). \textit{Philosophiae Naturalis Principia Mathematica}.
+
+\bibitem{ligo} Abbott, B.P. et al. (LIGO Scientific Collaboration) (2016). Observation of gravitational waves. \textit{Phys. Rev. Lett.} 116, 061102.
+
+\bibitem{sanders} Mazuela, G. (2025). \textit{Process Compression and Temporal Inertia in eCEL Fluid Dynamics}. Marc Sanders Foundation in Metaphysics (under review). \url{https://marcsandersfoundation.org/metaphysics/}
+
+\end{thebibliography}
+
+\end{document}
